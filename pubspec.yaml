@@ -57,6 +57,13 @@ flutter:
         - asset: assets/fonts/Poppins-Regular.ttf
           weight: 400
 
+    - family: Mulish
+      fonts:
+        - asset: assets/fonts/Mulish/static/Mulish-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Mulish/static/Mulish-Black.ttf
+          weight: 400
+
 flutter_gen:
   output: lib/gen
   integrations:
