@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
 import 'package:quick_chat/gen/colors.gen.dart';
 
-
 /*
 edited by : Mohamed Waleed
 edited at : 14/10/2024
@@ -67,8 +66,8 @@ class CustomButton extends StatelessWidget {
                 title ?? "",
                 style: titleTextStyle ??
                     (filled
-                        ? AppTextStyles.kWhite15FontW700
-                        : AppTextStyles.kBlack15FontW700),
+                        ? AppTextStyles.alexandria25whitew900
+                        : AppTextStyles.alexandria25blackw900),
               ),
             ),
       ),
