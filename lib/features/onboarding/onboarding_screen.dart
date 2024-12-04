@@ -37,6 +37,7 @@ class OnboardingScreen extends StatelessWidget {
             const Spacer(),
             Text('Terms and Conditions',
                 style: TextStyle(
+                  decoration: TextDecoration.underline,
                   fontFamily: 'mulish',
                   color: const Color(0xFF0F1828),
                   fontSize: 15.sp,
