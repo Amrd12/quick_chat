@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:quick_chat/features/onboarding/onboarding_screen.dart';
 
 abstract class AppRouter {
   static String get intialRoute {
@@ -10,7 +11,12 @@ abstract class AppRouter {
     // }
   }
 
-  static GoRouter goRouter = GoRouter(initialLocation: intialRoute, routes: [
-    GoRoute(path: ""),
+  static GoRouter goRouter =
+      GoRouter(initialLocation: OnboardingScreen.id, routes: [
+    GoRoute(
+      path: OnboardingScreen.id,
+      name: OnboardingScreen.id,
+      builder: (context, state) => const OnboardingScreen(),
+    ),
   ]);
 }

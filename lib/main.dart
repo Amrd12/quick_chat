@@ -41,9 +41,7 @@ class MyApp extends StatelessWidget {
               appBarTheme: const AppBarTheme(
                 color: Colors.white,
               ),
-              //edited by : waleed
-              //edited at : 21/10/2024
-              //edits : make the color of selection color to be green and change the color of handle
+              //make the color of selection color to be green and change the color of handle
               textSelectionTheme: TextSelectionThemeData(
                 selectionColor: ColorName.green.withOpacity(0.5),
                 selectionHandleColor: ColorName.green,
