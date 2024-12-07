@@ -8,14 +8,18 @@ import 'package:quick_chat/core/routes/app_router.dart';
 import 'package:quick_chat/core/utils/app_utils.dart';
 import 'package:quick_chat/gen/colors.gen.dart';
 import 'package:quick_chat/gen/fonts.gen.dart';
+import 'package:quick_chat/core/utils/storage.dart';
+import 'package:quick_chat/core/utils/app_colors.dart';
 
-void main() {
-    WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-    FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    runApp(const MyApp());
-    FlutterNativeSplash.remove();
+void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await Storage.instance.initStorage();
+  AppColors.isDarkMode = Storage.instance.isDarkMood;
 
+  runApp(const MyApp());
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
@@ -29,29 +33,17 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         AppScreenUtils.initUtils(context);
-        return  GetMaterialApp.router(
-            routeInformationParser: AppRouter.goRouter.routeInformationParser,
-            routerDelegate: AppRouter.goRouter.routerDelegate,
-            routeInformationProvider:
-                AppRouter.goRouter.routeInformationProvider,
-            translations: AppTranslations(),
-            locale: Get.locale ?? const Locale("ar"),
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              appBarTheme: const AppBarTheme(
-                color: Colors.white,
-              ),
-              //make the color of selection color to be green and change the color of handle
-              textSelectionTheme: TextSelectionThemeData(
-                selectionColor: ColorName.green.withOpacity(0.5),
-                selectionHandleColor: ColorName.green,
-              ),
-              fontFamily: FontFamily.alexandria,
-              useMaterial3: true,
-              brightness: Brightness.light,
-              scaffoldBackgroundColor: Colors.white,
-            ),
-          
+        return GetMaterialApp.router(
+          routeInformationParser: AppRouter.goRouter.routeInformationParser,
+          routerDelegate: AppRouter.goRouter.routerDelegate,
+          routeInformationProvider: AppRouter.goRouter.routeInformationProvider,
+          translations: AppTranslations(),
+          locale: Get.locale ?? const Locale("ar"),
+          debugShowCheckedModeBanner: false,
+          // theme: AppColors.lightTheme,
+          // darkTheme: AppColors.dartTheme,
+          // themeMode:
+          //     Storage.instance.isDarkMood ? ThemeMode.dark : ThemeMode.light,
         );
       },
     );

@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
-import 'package:quick_chat/gen/colors.gen.dart';
-
-/*
-edited by : Mohamed Waleed
-edited at : 14/10/2024
-edits :
-- add property titleTextStyle and it will be nullable if the user didn't specify it then use the defualt text style
-
- */
+import 'package:quick_chat/core/utils/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.onTap,
     this.title,
-    this.color = ColorName.green,
+    this.color = AppColors.blue,
     this.width,
     this.height,
     this.image,
@@ -47,9 +39,9 @@ class CustomButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
-          color: filled ? color : Colors.white,
+          color: filled ? color : AppColors.blue,
           borderRadius: BorderRadius.circular(boarderRadius ?? 0),
-          border: filled ? null : Border.all(color: ColorName.green),
+          border: filled ? null : Border.all(color: AppColors.blue),
           image: image == null
               ? null
               : DecorationImage(
@@ -61,13 +53,13 @@ class CustomButton extends StatelessWidget {
         width: radius ?? width,
         child: child ??
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 14.w),
+              padding: EdgeInsets.symmetric(vertical: 10.w),
               child: Text(
                 title ?? "",
                 style: titleTextStyle ??
                     (filled
-                        ? AppTextStyles.alexandria25whitew900
-                        : AppTextStyles.alexandria25blackw900),
+                        ? AppTextStyles.alexandria25WhitekW900
+                        : AppTextStyles.alexandria25BlackWhiteW900),
               ),
             ),
       ),
