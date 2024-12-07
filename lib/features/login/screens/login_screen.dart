@@ -32,22 +32,15 @@ class LoginScreen extends StatelessWidget {
           ),
           SizedBox(height: 50.sp),
           CustomTextFormField(
-              prexixIconConstraints: BoxConstraints(maxHeight: 20.sp),
               hintText: 'Enter your email',
-              prefixIcon: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 9.sp),
-                child: const Icon(Icons.email_outlined),
-              ),
+              prefixIcon: Assets.images.icons.emailIcon
+                  .image(color: AppColors.whiteBlack),
               label: 'Email'),
           SizedBox(height: 10.sp),
           CustomTextFormField(
-              prexixIconConstraints: BoxConstraints(maxHeight: 20.sp),
               hintText: 'Enter your password',
-              hintTextStyle: AppTextStyles.alexandria11greyw400,
-              prefixIcon: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                child: const Icon(Icons.key_outlined),
-              ),
+              prefixIcon: Assets.images.icons.lockIcon
+                  .image(color: AppColors.whiteBlack),
               label: 'Password'),
           SizedBox(height: 20.sp),
           Padding(
@@ -63,18 +56,23 @@ class LoginScreen extends StatelessWidget {
           ),
           Spacer(),
           SizedBox(height: 20.sp),
-          Text.rich(TextSpan(children: [
-            TextSpan(
-                text: "Don't have an account ?  ",
-                style: AppTextStyles.alexandria15WhiteBlackW500),
-            TextSpan(
-              text: "Sign Up",
-              style: AppTextStyles.alexandria15WhiteBlackW500.copyWith(
-                decoration: TextDecoration.underline,
-                decorationColor: AppColors.whiteBlack,
-              ),
-            )
-          ])),
+          GestureDetector(
+            onTap: () {
+              context.push(SignUpScreen.id);
+            },
+            child: Text.rich(TextSpan(children: [
+              TextSpan(
+                  text: "Don't have an account ?  ",
+                  style: AppTextStyles.alexandria15WhiteBlackW500),
+              TextSpan(
+                text: "Sign Up",
+                style: AppTextStyles.alexandria15WhiteBlackW500.copyWith(
+                  decoration: TextDecoration.underline,
+                  decorationColor: AppColors.whiteBlack,
+                ),
+              )
+            ])),
+          ),
         ],
       ),
     ));

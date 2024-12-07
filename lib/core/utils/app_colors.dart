@@ -21,7 +21,6 @@ class AppColors {
 
   static Color get whiteBlack =>
       isDarkMode ? Colors.white : Colors.grey.shade900;
-
   static Color get grey =>
       isDarkMode ? Colors.grey.shade500 : Colors.grey.shade700;
   // static final ThemeData lightTheme = ThemeData(

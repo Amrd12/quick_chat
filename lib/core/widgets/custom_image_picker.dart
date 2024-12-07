@@ -2,21 +2,24 @@ import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+import 'package:quick_chat/core/utils/app_colors.dart';
+
 class CustomImagePicker extends StatefulWidget {
   const CustomImagePicker({
     super.key,
     this.width = 120,
     this.height = 120,
-    this.alignment = AlignmentDirectional.bottomStart,
+    this.alignment = AlignmentDirectional.bottomEnd,
     required this.ontap,
     required this.child,
     required this.boxDecoration,
-    required this.addIcon,
+    this.addIcon,
   });
 
   final double width, height;
   final BoxDecoration boxDecoration;
-  final Widget child, addIcon;
+  final Widget child;
+  final Widget? addIcon;
   final Function(XFile) ontap;
   final AlignmentGeometry alignment;
 
@@ -28,28 +31,32 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
   File? imagePath;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: widget.width,
-      height: widget.height,
-      child: Stack(
-        children: [
-          Container(
-            clipBehavior: Clip.hardEdge,
-            width: widget.width,
-            height: widget.height,
-            decoration: widget.boxDecoration,
-            child: imagePath == null
-                ? widget.child
-                : Image.file(
-                    imagePath!,
-                    fit: BoxFit.cover,
-                  ),
-          ),
-          Align(
-            alignment: widget.alignment,
-            child: GestureDetector(onTap: () => ontap(), child: widget.addIcon),
-          )
-        ],
+    return GestureDetector(
+      onTap: () => ontap(),
+      child: SizedBox(
+        width: widget.width,
+        height: widget.height,
+        child: Stack(
+          children: [
+            Container(
+              clipBehavior: Clip.hardEdge,
+              width: widget.width,
+              height: widget.height,
+              decoration: widget.boxDecoration,
+              child: imagePath == null
+                  ? widget.child
+                  : Image.file(
+                      imagePath!,
+                      fit: BoxFit.cover,
+                    ),
+            ),
+            if (widget.addIcon != null)
+              Align(
+                alignment: widget.alignment,
+                child: widget.addIcon,
+              )
+          ],
+        ),
       ),
     );
   }

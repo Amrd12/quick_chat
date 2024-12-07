@@ -43,17 +43,8 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/darkMoodIcon.svg
-  SvgGenImage get darkMoodIcon =>
-      const SvgGenImage('assets/images/darkMoodIcon.svg');
-
-  /// File path: assets/images/eye_disabled.svg
-  SvgGenImage get eyeDisabled =>
-      const SvgGenImage('assets/images/eye_disabled.svg');
-
-  /// File path: assets/images/eye_enabled.svg
-  SvgGenImage get eyeEnabled =>
-      const SvgGenImage('assets/images/eye_enabled.svg');
+  /// Directory path: assets/images/icons
+  $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
   /// File path: assets/images/logo.png
   AssetGenImage get logoPng => const AssetGenImage('assets/images/logo.png');
@@ -70,14 +61,50 @@ class $AssetsImagesGen {
       const SvgGenImage('assets/images/profile_image_placeholder.svg');
 
   /// List of all assets
+  List<dynamic> get values =>
+      [logoPng, logoSvg, onboarding, profileImagePlaceholder];
+}
+
+class $AssetsImagesIconsGen {
+  const $AssetsImagesIconsGen();
+
+  /// File path: assets/images/icons/darkMoodIcon.svg
+  SvgGenImage get darkMoodIcon =>
+      const SvgGenImage('assets/images/icons/darkMoodIcon.svg');
+
+  /// File path: assets/images/icons/email_icon.png
+  AssetGenImage get emailIcon =>
+      const AssetGenImage('assets/images/icons/email_icon.png');
+
+  /// File path: assets/images/icons/eye_disabled.svg
+  SvgGenImage get eyeDisabled =>
+      const SvgGenImage('assets/images/icons/eye_disabled.svg');
+
+  /// File path: assets/images/icons/eye_enabled.svg
+  SvgGenImage get eyeEnabled =>
+      const SvgGenImage('assets/images/icons/eye_enabled.svg');
+
+  /// File path: assets/images/icons/lock_icon.png
+  AssetGenImage get lockIcon =>
+      const AssetGenImage('assets/images/icons/lock_icon.png');
+
+  /// File path: assets/images/icons/password_icon.svg
+  SvgGenImage get passwordIcon =>
+      const SvgGenImage('assets/images/icons/password_icon.svg');
+
+  /// File path: assets/images/icons/person_icon.png
+  AssetGenImage get personIcon =>
+      const AssetGenImage('assets/images/icons/person_icon.png');
+
+  /// List of all assets
   List<dynamic> get values => [
         darkMoodIcon,
+        emailIcon,
         eyeDisabled,
         eyeEnabled,
-        logoPng,
-        logoSvg,
-        onboarding,
-        profileImagePlaceholder
+        lockIcon,
+        passwordIcon,
+        personIcon
       ];
 }
 

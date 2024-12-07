@@ -133,9 +133,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               prefixIconConstraints: widget.prexixIconConstraints ??
                   BoxConstraints(
                     minWidth: 30.w,
-                    minHeight: 25.h,
-                    maxWidth: 30.w,
-                    maxHeight: 25.h,
+                    minHeight: 30.h,
+                    maxWidth: 50.w,
+                    maxHeight: 50.h,
                   ),
               contentPadding: EdgeInsetsDirectional.only(
                 start: widget.start ?? 15.w,
@@ -148,7 +148,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   ? AppTextStyles.alexandria15WhiteBlackW500
                   : AppTextStyles.alexandria15WhiteBlackW500,
               hintText: widget.hintText,
-              prefixIcon: widget.prefixIcon,
+              prefixIcon: Padding(
+                padding: EdgeInsets.all(10.0.sp),
+                child: widget.prefixIcon,
+              ),
+
               hintStyle: widget.hintTextStyle ??
                   AppTextStyles.alexandria15WhiteBlackW500,
               border: OutlineInputBorder(
@@ -207,8 +211,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           togglePasswordVisibility();
         },
         child: isObsecured
-            ? Assets.images.eyeDisabled.svg(height: 18.75.h, width: 16.w)
-            : Assets.images.eyeEnabled.svg(height: 18.75.h, width: 16.w),
+            ? Assets.images.icons.eyeDisabled.svg(height: 18.75.h, width: 16.w)
+            : Assets.images.icons.eyeEnabled.svg(height: 18.75.h, width: 16.w),
       );
     } else {
       return null;
