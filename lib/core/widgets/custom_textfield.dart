@@ -152,6 +152,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 padding: EdgeInsets.all(10.0.sp),
                 child: widget.prefixIcon,
               ),
+
               hintStyle: widget.hintTextStyle ??
                   AppTextStyles.alexandria15WhiteBlackW500,
               border: OutlineInputBorder(

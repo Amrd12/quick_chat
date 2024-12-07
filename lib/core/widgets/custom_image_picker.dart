@@ -2,6 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+import 'package:quick_chat/core/utils/app_colors.dart';
+
 class CustomImagePicker extends StatefulWidget {
   const CustomImagePicker({
     super.key,
@@ -11,12 +13,13 @@ class CustomImagePicker extends StatefulWidget {
     required this.ontap,
     required this.child,
     required this.boxDecoration,
-    required this.addIcon,
+    this.addIcon,
   });
 
   final double width, height;
   final BoxDecoration boxDecoration;
-  final Widget child, addIcon;
+  final Widget child;
+  final Widget? addIcon;
   final Function(XFile) ontap;
   final AlignmentGeometry alignment;
 
@@ -47,10 +50,11 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
                       fit: BoxFit.cover,
                     ),
             ),
-            Align(
-              alignment: widget.alignment,
-              child: widget.addIcon,
-            )
+            if (widget.addIcon != null)
+              Align(
+                alignment: widget.alignment,
+                child: widget.addIcon,
+              )
           ],
         ),
       ),

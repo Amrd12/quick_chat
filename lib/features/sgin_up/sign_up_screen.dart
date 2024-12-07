@@ -9,6 +9,7 @@ import 'package:quick_chat/core/utils/app_utils.dart';
 import 'package:quick_chat/core/widgets/custom_button.dart';
 import 'package:quick_chat/core/widgets/custom_image_picker.dart';
 import 'package:quick_chat/core/widgets/custom_textfield.dart';
+import 'package:quick_chat/features/login/screens/login_screen.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 import 'package:quick_chat/core/utils/validator_utils.dart';
 
@@ -53,8 +54,9 @@ class _SignUpBodyState extends State<SignUpBody> {
           Spacer(),
           CustomImagePicker(
             ontap: (XFile file) {},
-            boxDecoration:
-                BoxDecoration(borderRadius: BorderRadius.circular(50.sp)),
+            boxDecoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50.r),
+                color: AppColors.grey.withOpacity(.2)),
             addIcon: CircleAvatar(
               radius: 16.r,
               backgroundColor: AppColors.whiteBlack,
@@ -106,18 +108,21 @@ class _SignUpBodyState extends State<SignUpBody> {
             ),
           ),
           SizedBox(height: 15.sp),
-          Text.rich(TextSpan(children: [
-            TextSpan(
-                text: "Already have an account ?  ",
-                style: AppTextStyles.alexandria15WhiteBlackW500),
-            TextSpan(
-              text: "login",
-              style: AppTextStyles.alexandria15WhiteBlackW500.copyWith(
-                decoration: TextDecoration.underline,
-                decorationColor: AppColors.whiteBlack,
-              ),
-            )
-          ])),
+          GestureDetector(
+            onTap: () => context.pushNamed(LoginScreen.id),
+            child: Text.rich(TextSpan(children: [
+              TextSpan(
+                  text: "Already have an account ?  ",
+                  style: AppTextStyles.alexandria15WhiteBlackW500),
+              TextSpan(
+                text: "login",
+                style: AppTextStyles.alexandria15WhiteBlackW500.copyWith(
+                  decoration: TextDecoration.underline,
+                  decorationColor: AppColors.whiteBlack,
+                ),
+              )
+            ])),
+          ),
           SizedBox(height: 10)
         ],
       ),
