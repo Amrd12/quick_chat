@@ -1,30 +1,11 @@
-/*
-edited by : Mohamed Waleed
-edited at : 16/10/2024
-edits :
-
-change the sizes for making it responsive on different screens sizes
-________________________________________________________________________
-edited by : Mohamed Waleed
-edited at : 19/10/2024
-edits :
-add prexixIconConstraints and suffixIconConstraints to make it editable by developer where it will be used
- */
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:quick_chat/core/utils/app_colors.dart';
-
 import '../../gen/assets.gen.dart';
 import '../../gen/colors.gen.dart';
 import '../constants/app_text_styles.dart';
 import '../utils/app_utils.dart';
-
-//edit by helmy
-//edit at date (11/11/2024)
-//added customValidation to custom textFormFeild to be true and return the validation message if carColor is null in the textFormFeild for Choose Car color at date(11/11/2024) by helmy
-// CONTROL container padding by varriables
 
 enum CustomTextFieldType { phone, email, password, name, text }
 
@@ -113,13 +94,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             bottom: widget.bottom ?? (AppScreenUtils.isTablet ? 8.h : 4.h),
             start: widget.start ?? 11.w,
           ),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: _hasValidationError ? AppColors.red : AppColors.textColor,
-              strokeAlign: 1,
-            ),
-            borderRadius: BorderRadius.circular(6),
-          ),
           child: TextFormField(
             readOnly: widget.isReadOnly ?? false,
             onTap: () {
@@ -152,7 +126,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             enableSuggestions: true,
             controller: widget.textEditingController,
             style: AppTextStyles.alexandria25WhitekW900,
-            cursorColor: ColorName.green,
+            cursorColor: AppColors.whiteBlack,
             keyboardType: widget.keyboardType,
             decoration: InputDecoration(
               errorStyle: const TextStyle(fontSize: 0),
@@ -163,17 +137,43 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                     maxWidth: 30.w,
                     maxHeight: 25.h,
                   ),
-              contentPadding:
-                  EdgeInsetsDirectional.only(start: 15.w, end: 15.w),
+              contentPadding: EdgeInsetsDirectional.only(
+                start: widget.start ?? 15.w,
+                end: widget.end ?? 15.w,
+                top: widget.top ?? (AppScreenUtils.isTablet ? 8.h : 4.h),
+                bottom: widget.bottom ?? (AppScreenUtils.isTablet ? 8.h : 4.h),
+              ),
               labelText: _focusNode.hasFocus ? widget.label : widget.hintText,
               labelStyle: _focusNode.hasFocus
-                  ? AppTextStyles.alexandria25GreyW900
-                  : AppTextStyles.alexandria25Greyo10W900,
+                  ? AppTextStyles.alexandria15WhiteBlackW500
+                  : AppTextStyles.alexandria15WhiteBlackW500,
               hintText: widget.hintText,
               prefixIcon: widget.prefixIcon,
-              hintStyle:
-                  widget.hintTextStyle ?? AppTextStyles.alexandria25Greyo10W900,
-              border: InputBorder.none,
+              hintStyle: widget.hintTextStyle ??
+                  AppTextStyles.alexandria15WhiteBlackW500,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6),
+                borderSide: BorderSide(
+                  color: _hasValidationError
+                      ? AppColors.red
+                      : AppColors.whiteBlack,
+                  width: 1,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6),
+                borderSide: BorderSide(
+                  color: AppColors.whiteBlack,
+                  width: 1,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6),
+                borderSide: BorderSide(
+                  color: AppColors.whiteBlack,
+                  width: 1.5,
+                ),
+              ),
               suffixIconConstraints: widget.suffixIconConstraints ??
                   BoxConstraints(
                     minWidth: AppScreenUtils.isTablet ? 20.w : 20.w,

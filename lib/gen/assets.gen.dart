@@ -43,6 +43,10 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/darkMoodIcon.svg
+  SvgGenImage get darkMoodIcon =>
+      const SvgGenImage('assets/images/darkMoodIcon.svg');
+
   /// File path: assets/images/eye_disabled.svg
   SvgGenImage get eyeDisabled =>
       const SvgGenImage('assets/images/eye_disabled.svg');
@@ -67,6 +71,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
+        darkMoodIcon,
         eyeDisabled,
         eyeEnabled,
         logoPng,
