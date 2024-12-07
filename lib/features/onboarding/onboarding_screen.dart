@@ -32,7 +32,7 @@ class OnboardingScreen extends StatelessWidget {
             const SizedBox(height: 25),
             Text(
               'Welcome to Quick Chat',
-              style: AppTextStyles.poppins24WhiteBlackW900,
+              style: AppTextStyles.alexandria25WhiteBlackW900,
             ),
             const Spacer(),
             Text('Terms and Conditions',
@@ -43,7 +43,7 @@ class OnboardingScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 25.sp),
               child: CustomButton(
                 onTap: () {
-                  context.pushReplacementNamed(SignUpScreen.id);
+                  context.pushNamed(SignUpScreen.id);
                 },
                 filled: true,
                 boarderRadius: 25.sp,

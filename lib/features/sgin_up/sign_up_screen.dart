@@ -49,10 +49,10 @@ class _SignUpBodyState extends State<SignUpBody> {
                 BoxDecoration(borderRadius: BorderRadius.circular(50.sp)),
             addIcon: CircleAvatar(
               radius: 16.r,
-              backgroundColor: AppColors.textColor,
+              backgroundColor: AppColors.whiteBlack,
               child: Icon(
                 Icons.add,
-                color: AppColors.background,
+                color: AppColors.blackWhite,
                 size: 20.sp,
               ),
             ),
