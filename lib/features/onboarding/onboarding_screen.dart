@@ -19,7 +19,7 @@ class OnboardingScreen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 125.sp),
+              padding: EdgeInsets.only(top: 80.sp),
               child: Align(
                 alignment: Alignment.center,
                 child: Assets.images.onboarding.image(
@@ -32,7 +32,7 @@ class OnboardingScreen extends StatelessWidget {
             const SizedBox(height: 25),
             Text(
               'Welcome to Quick Chat',
-              style: AppTextStyles.poppins24WhiteBlackW900,
+              style: AppTextStyles.poppins24WBlackhiteW900,
             ),
             const Spacer(),
             Text('Terms and Conditions',

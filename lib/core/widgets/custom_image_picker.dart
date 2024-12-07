@@ -7,7 +7,7 @@ class CustomImagePicker extends StatefulWidget {
     super.key,
     this.width = 120,
     this.height = 120,
-    this.alignment = AlignmentDirectional.bottomStart,
+    this.alignment = AlignmentDirectional.bottomEnd,
     required this.ontap,
     required this.child,
     required this.boxDecoration,
@@ -28,28 +28,31 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
   File? imagePath;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: widget.width,
-      height: widget.height,
-      child: Stack(
-        children: [
-          Container(
-            clipBehavior: Clip.hardEdge,
-            width: widget.width,
-            height: widget.height,
-            decoration: widget.boxDecoration,
-            child: imagePath == null
-                ? widget.child
-                : Image.file(
-                    imagePath!,
-                    fit: BoxFit.cover,
-                  ),
-          ),
-          Align(
-            alignment: widget.alignment,
-            child: GestureDetector(onTap: () => ontap(), child: widget.addIcon),
-          )
-        ],
+    return GestureDetector(
+      onTap: () => ontap(),
+      child: SizedBox(
+        width: widget.width,
+        height: widget.height,
+        child: Stack(
+          children: [
+            Container(
+              clipBehavior: Clip.hardEdge,
+              width: widget.width,
+              height: widget.height,
+              decoration: widget.boxDecoration,
+              child: imagePath == null
+                  ? widget.child
+                  : Image.file(
+                      imagePath!,
+                      fit: BoxFit.cover,
+                    ),
+            ),
+            Align(
+              alignment: widget.alignment,
+              child: widget.addIcon,
+            )
+          ],
+        ),
       ),
     );
   }

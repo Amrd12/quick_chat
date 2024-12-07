@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
+import 'package:quick_chat/core/utils/app_colors.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -19,7 +20,7 @@ class AppSnackBar {
       onTap: onTap,
       Overlay.of(context),
       CustomSnackBar.error(
-        backgroundColor: Colors.grey.shade200.withOpacity(0.5),
+        backgroundColor: AppColors.blackWhite.withOpacity(.5),
         boxShadow: [BoxShadow(color: Colors.grey.shade200.withOpacity(0.5))],
         icon: const SizedBox(),
         textStyle: AppTextStyles.alexandria25WhiteBlackW900,

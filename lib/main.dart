@@ -38,8 +38,25 @@ class MyApp extends StatelessWidget {
           routerDelegate: AppRouter.goRouter.routerDelegate,
           routeInformationProvider: AppRouter.goRouter.routeInformationProvider,
           translations: AppTranslations(),
-          locale: Get.locale ?? const Locale("ar"),
+          locale: Get.locale ?? const Locale("en"),
           debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+              color: Colors.white,
+            ),
+
+            //edited by : waleed
+            //edited at : 21/10/2024
+            //edits : make the color of selection color to be green and change the color of handle
+            textSelectionTheme: TextSelectionThemeData(
+              selectionColor: ColorName.green.withOpacity(0.5),
+              selectionHandleColor: ColorName.green,
+            ),
+            fontFamily: FontFamily.alexandria,
+            useMaterial3: true,
+            brightness: Brightness.light,
+            scaffoldBackgroundColor: AppColors.blackWhite,
+          ),
           // theme: AppColors.lightTheme,
           // darkTheme: AppColors.dartTheme,
           // themeMode:
