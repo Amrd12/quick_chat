@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quick_chat/core/utils/app_colors.dart';
+import 'package:quick_chat/gen/assets.gen.dart';
 
 class GetStartedButton extends StatelessWidget {
   const GetStartedButton({super.key});
@@ -10,15 +12,15 @@ class GetStartedButton extends StatelessWidget {
       width: 327,
       height: 52,
       decoration: BoxDecoration(
-        color: const Color(0xFF002DE3),
+        color: AppColors.blue,
         borderRadius: BorderRadius.circular(25),
       ),
       child: TextButton(
         onPressed: () {},
-        child: const Text(
+        child: Text(
           'Get Started',
           style: TextStyle(
-            fontFamily: 'mulish',
+            fontFamily: Assets.fonts.alexandria,
             color: Colors.white,
             fontSize: 18,
             fontWeight: FontWeight.bold,

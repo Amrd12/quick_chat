@@ -22,7 +22,7 @@ class AppSnackBar {
         backgroundColor: Colors.grey.shade200.withOpacity(0.5),
         boxShadow: [BoxShadow(color: Colors.grey.shade200.withOpacity(0.5))],
         icon: const SizedBox(),
-        textStyle: AppTextStyles.alexandria25greenw900,
+        textStyle: AppTextStyles.alexandria25WhiteBlackW900,
         message: msg,
       ),
     );

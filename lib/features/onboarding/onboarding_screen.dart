@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quick_chat/features/onboarding/widgets/get_started_button.dart';
+import 'package:quick_chat/core/constants/app_text_styles.dart';
+import 'package:quick_chat/core/widgets/custom_button.dart';
+import 'package:quick_chat/features/sgin_up/sign_up_screen.dart';
+import 'package:quick_chat/gen/assets.gen.dart';
+import "package:quick_chat/core/utils/app_colors.dart";
+import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatelessWidget {
   static const String id = '/onboarding';
@@ -9,6 +14,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: AppColors.background,
       body: SafeArea(
         child: Column(
           children: [
@@ -16,8 +22,7 @@ class OnboardingScreen extends StatelessWidget {
               padding: EdgeInsets.only(top: 125.sp),
               child: Align(
                 alignment: Alignment.center,
-                child: Image.asset(
-                  'assets/images/onboarding.png',
+                child: Assets.images.onboarding.image(
                   width: 250.sp,
                   height: 250.sp,
                   fit: BoxFit.contain,
@@ -27,23 +32,24 @@ class OnboardingScreen extends StatelessWidget {
             const SizedBox(height: 25),
             Text(
               'Welcome to Quick Chat',
-              style: TextStyle(
-                fontFamily: 'mulish',
-                color: Color(0xFF0F1828),
-                fontSize: 24.sp,
-                fontWeight: FontWeight.bold,
-              ),
+              style: AppTextStyles.poppins24WhiteBlackW900,
             ),
             const Spacer(),
             Text('Terms and Conditions',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontFamily: 'mulish',
-                  color: const Color(0xFF0F1828),
-                  fontSize: 15.sp,
-                )),
+                style: AppTextStyles.alexandria15WhiteBlackW500),
             const SizedBox(height: 25),
-            const GetStartedButton(),
+            // const GetStartedButton(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.sp),
+              child: CustomButton(
+                onTap: () {
+                  context.pushReplacementNamed(SignUpScreen.id);
+                },
+                filled: true,
+                boarderRadius: 25.sp,
+                title: 'Get Started',
+              ),
+            ),
             const SizedBox(height: 25),
           ],
         ),
