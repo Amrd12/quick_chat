@@ -56,21 +56,38 @@ class $AssetsImagesGen {
   AssetGenImage get onboarding =>
       const AssetGenImage('assets/images/onboarding.png');
 
+  /// File path: assets/images/pexels-rio-kuncoro-1373834-2773977.jpg
+  AssetGenImage get pexelsRioKuncoro13738342773977 => const AssetGenImage(
+      'assets/images/pexels-rio-kuncoro-1373834-2773977.jpg');
+
   /// File path: assets/images/profile_image_placeholder.svg
   SvgGenImage get profileImagePlaceholder =>
       const SvgGenImage('assets/images/profile_image_placeholder.svg');
 
   /// List of all assets
-  List<dynamic> get values =>
-      [logoPng, logoSvg, onboarding, profileImagePlaceholder];
+  List<dynamic> get values => [
+        logoPng,
+        logoSvg,
+        onboarding,
+        pexelsRioKuncoro13738342773977,
+        profileImagePlaceholder
+      ];
 }
 
 class $AssetsImagesIconsGen {
   const $AssetsImagesIconsGen();
 
+  /// File path: assets/images/icons/camera_icon.svg
+  SvgGenImage get cameraIcon =>
+      const SvgGenImage('assets/images/icons/camera_icon.svg');
+
   /// File path: assets/images/icons/darkMoodIcon.svg
   SvgGenImage get darkMoodIcon =>
       const SvgGenImage('assets/images/icons/darkMoodIcon.svg');
+
+  /// File path: assets/images/icons/edit_icon.svg
+  SvgGenImage get editIcon =>
+      const SvgGenImage('assets/images/icons/edit_icon.svg');
 
   /// File path: assets/images/icons/email_icon.png
   AssetGenImage get emailIcon =>
@@ -98,7 +115,9 @@ class $AssetsImagesIconsGen {
 
   /// List of all assets
   List<dynamic> get values => [
+        cameraIcon,
         darkMoodIcon,
+        editIcon,
         emailIcon,
         eyeDisabled,
         eyeEnabled,

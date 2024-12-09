@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
 import 'package:quick_chat/core/utils/app_colors.dart';
+import 'package:quick_chat/core/utils/app_snack_bar.dart';
 import 'package:quick_chat/core/widgets/custom_button.dart';
 import 'package:quick_chat/core/widgets/custom_textfield.dart';
+import 'package:quick_chat/features/home/home_screen.dart';
 import 'package:quick_chat/features/sgin_up/sign_up_screen.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 
@@ -47,7 +49,8 @@ class LoginScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 25.sp),
             child: CustomButton(
               onTap: () {
-                context.pushNamed(SignUpScreen.id);
+                AppSnackBar.showSnackBar(context, "Logged");
+                context.pushNamed(HomeScreen.id);
               },
               filled: true,
               boarderRadius: 25.sp,

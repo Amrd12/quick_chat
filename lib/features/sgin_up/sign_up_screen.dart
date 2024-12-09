@@ -9,6 +9,7 @@ import 'package:quick_chat/core/utils/app_utils.dart';
 import 'package:quick_chat/core/widgets/custom_button.dart';
 import 'package:quick_chat/core/widgets/custom_image_picker.dart';
 import 'package:quick_chat/core/widgets/custom_textfield.dart';
+import 'package:quick_chat/features/home/home_screen.dart';
 import 'package:quick_chat/features/login/screens/login_screen.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 import 'package:quick_chat/core/utils/validator_utils.dart';
@@ -131,5 +132,6 @@ class _SignUpBodyState extends State<SignUpBody> {
 
   void onTap() {
     AppSnackBar.showSnackBar(context, "Created");
+    context.pushNamed(HomeScreen.id);
   }
 }
