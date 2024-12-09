@@ -1,9 +1,10 @@
 import 'package:go_router/go_router.dart';
-import 'package:quick_chat/features/login/screens/login_screen.dart';
 
 //Screens
+import 'package:quick_chat/features/login/screens/login_screen.dart';
 import 'package:quick_chat/features/onboarding/onboarding_screen.dart';
 import 'package:quick_chat/features/sgin_up/sign_up_screen.dart';
+import 'package:quick_chat/features/home/home_screen.dart';
 
 abstract class AppRouter {
   static String get intialRoute {
@@ -33,6 +34,11 @@ abstract class AppRouter {
         path: LoginScreen.id,
         name: LoginScreen.id,
         builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        path: HomeScreen.id,
+        name: HomeScreen.id,
+        builder: (context, state) => const HomeScreen(),
       ),
     ],
   );
