@@ -36,10 +36,11 @@ class OnboardingScreen extends StatelessWidget {
               style: AppTextStyles.poppins24WBlackhiteW900,
             ),
             const Spacer(),
-            Text('Terms and Conditions',
-                style: AppTextStyles.alexandria15WhiteBlackW500),
+            const Text(
+              'Terms and Conditions',
+              style: TextStyle(decoration: TextDecoration.underline),
+            ),
             const SizedBox(height: 25),
-            // const GetStartedButton(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 25.sp),
               child: CustomButton(
