@@ -132,6 +132,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
             keyboardType: widget.keyboardType,
             decoration: InputDecoration(
+              filled: true,
+              fillColor:
+                  Theme.of(context).colorScheme.onSurface.withOpacity(.3),
               errorStyle: const TextStyle(fontSize: 0),
               prefixIconConstraints: widget.prexixIconConstraints ??
                   BoxConstraints(

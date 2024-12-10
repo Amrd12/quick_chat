@@ -26,13 +26,13 @@ class AppTextStyles {
   );
   static TextStyle alexandria25GreyW900 = TextStyle(
     fontSize: 25.sp,
-    //color: AppColors.grey,
+    color: AppColors.grey,
     fontFamily: FontFamily.alexandria,
     fontWeight: FontWeight.w900,
   );
   static TextStyle alexandria25Greyo10W900 = TextStyle(
     fontSize: 25.sp,
-    //color: AppColors.grey.withOpacity(.1),
+    color: AppColors.grey.withOpacity(.1),
     fontFamily: FontFamily.alexandria,
     fontWeight: FontWeight.w900,
   );
@@ -58,7 +58,7 @@ class AppTextStyles {
   );
   static TextStyle alexandria11redw400 = TextStyle(
     fontFamily: FontFamily.alexandria,
-    //color: AppColors.red,
+    color: AppColors.red,
     fontSize: 11.sp,
     fontWeight: FontWeight.w400,
   );
@@ -70,10 +70,17 @@ class AppTextStyles {
   );
   static TextStyle alexandria11greyw400 = TextStyle(
     fontFamily: FontFamily.alexandria,
-    //color: AppColors.grey,
+    color: AppColors.grey,
     fontSize: 11.sp,
     fontWeight: FontWeight.w400,
   );
+
+  static TextStyle alexandria14greykW500 = TextStyle(
+    fontFamily: FontFamily.alexandria,
+    color: AppColors.grey,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+
   static TextStyle alexandria20WhitekW100 = TextStyle(
     fontFamily: FontFamily.alexandria,
     fontSize: 20.sp,
