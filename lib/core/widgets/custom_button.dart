@@ -19,10 +19,11 @@ class CustomButton extends StatelessWidget {
     this.radius,
     this.titleTextStyle,
   });
+
   final void Function()? onTap;
   final String? title;
   final Color color;
-  final String? image;
+  final ImageProvider<Object>? image;
   final double? width;
   final double? height;
   final double? radius;
@@ -36,16 +37,18 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        clipBehavior: Clip.hardEdge,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
           color: filled ? color : AppColors.blue,
-          borderRadius: BorderRadius.circular(boarderRadius ?? 0),
+          borderRadius:
+              isCircle ? null : BorderRadius.circular(boarderRadius ?? 0),
           border: filled ? null : Border.all(color: AppColors.blue),
           image: image == null
               ? null
               : DecorationImage(
-                  image: AssetImage(image!),
+                  image: image!,
                   fit: BoxFit.cover,
                 ),
         ),

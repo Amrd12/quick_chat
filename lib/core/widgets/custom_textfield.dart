@@ -128,6 +128,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             // cursorColor: AppColors.whiteBlack,
             keyboardType: widget.keyboardType,
             decoration: InputDecoration(
+              filled: true,
+              fillColor:
+                  Theme.of(context).colorScheme.onSurface.withOpacity(.3),
               errorStyle: const TextStyle(fontSize: 0),
               prefixIconConstraints: widget.prexixIconConstraints ??
                   BoxConstraints(
@@ -151,7 +154,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 padding: EdgeInsets.all(10.0.sp),
                 child: widget.prefixIcon,
               ),
-
               hintStyle: widget.hintTextStyle ??
                   AppTextStyles.alexandria15WhiteBlackW500,
               border: OutlineInputBorder(

@@ -105,6 +105,14 @@ class $AssetsImagesIconsGen {
   AssetGenImage get lockIcon =>
       const AssetGenImage('assets/images/icons/lock_icon.png');
 
+  /// File path: assets/images/icons/message_not_seen.svg
+  SvgGenImage get messageNotSeen =>
+      const SvgGenImage('assets/images/icons/message_not_seen.svg');
+
+  /// File path: assets/images/icons/message_seen.svg
+  SvgGenImage get messageSeen =>
+      const SvgGenImage('assets/images/icons/message_seen.svg');
+
   /// File path: assets/images/icons/password_icon.svg
   SvgGenImage get passwordIcon =>
       const SvgGenImage('assets/images/icons/password_icon.svg');
@@ -122,6 +130,8 @@ class $AssetsImagesIconsGen {
         eyeDisabled,
         eyeEnabled,
         lockIcon,
+        messageNotSeen,
+        messageSeen,
         passwordIcon,
         personIcon
       ];

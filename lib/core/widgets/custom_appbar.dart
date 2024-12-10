@@ -18,9 +18,7 @@ class CustomAppBars extends AppBar {
                   .image(fit: BoxFit.cover),
             ),
           ),
-          iconTheme: IconThemeData(
-            // color: AppColors.whiteBlack, //change your color here
-          ),
+
           // backgroundColor: AppColors.blackWhite,
           title: Text(
             text,
