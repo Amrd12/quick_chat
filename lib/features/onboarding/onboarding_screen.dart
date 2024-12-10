@@ -36,10 +36,6 @@ class OnboardingScreen extends StatelessWidget {
               style: AppTextStyles.poppins24WBlackhiteW900,
             ),
             const Spacer(),
-            const Text(
-              'Terms and Conditions',
-              style: TextStyle(decoration: TextDecoration.underline),
-            ),
             const SizedBox(height: 25),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 25.sp),
@@ -51,6 +47,11 @@ class OnboardingScreen extends StatelessWidget {
                 boarderRadius: 25.sp,
                 title: 'Get Started',
               ),
+            ),
+            const SizedBox(height: 25),
+            const Text(
+              'Terms and Conditions',
+              style: TextStyle(decoration: TextDecoration.underline),
             ),
             const SizedBox(height: 25),
           ],

@@ -77,4 +77,10 @@ class AppTextStyles {
     fontSize: 11.sp,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle alexandria20WhitekW100 = TextStyle(
+    fontFamily: FontFamily.alexandria,
+    color: Colors.white,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w100,
+  );
 }

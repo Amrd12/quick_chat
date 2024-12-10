@@ -32,32 +32,34 @@ class CustomTextFormField extends StatefulWidget {
   final String? Function(String?)? validator;
   final bool? isReadOnly;
   final bool? customValidation;
+  final TextStyle? inputTextStyle;
 
-  const CustomTextFormField(
-      {super.key,
-      this.onChanged,
-      required this.hintText,
-      this.icon,
-      this.obscureText = false,
-      this.obsecuringCharacter = "*",
-      this.textEditingController,
-      this.keyboardType = TextInputType.text,
-      this.type = CustomTextFieldType.text,
-      this.maxLines = 1,
-      required this.prefixIcon,
-      this.suffixIcon,
-      required this.label,
-      this.hintTextStyle,
-      this.prexixIconConstraints,
-      this.suffixIconConstraints,
-      this.top,
-      this.bottom,
-      this.end,
-      this.start,
-      this.validator,
-      this.isReadOnly,
-      //added customValidation to custom textFormFeild to be true and return the validation message if carColor is null in the textFormFeild for Choose Car color at date(11/11/2024) by helmy
-      this.customValidation = false});
+  const CustomTextFormField({
+    super.key,
+    this.onChanged,
+    required this.hintText,
+    this.icon,
+    this.obscureText = false,
+    this.obsecuringCharacter = "*",
+    this.textEditingController,
+    this.keyboardType = TextInputType.text,
+    this.type = CustomTextFieldType.text,
+    this.maxLines = 1,
+    required this.prefixIcon,
+    this.suffixIcon,
+    required this.label,
+    this.hintTextStyle,
+    this.prexixIconConstraints,
+    this.suffixIconConstraints,
+    this.top,
+    this.bottom,
+    this.end,
+    this.start,
+    this.validator,
+    this.isReadOnly,
+    this.customValidation = false,
+    this.inputTextStyle, // Add the new parameter
+  });
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -95,6 +97,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             start: widget.start ?? 11.w,
           ),
           child: TextFormField(
+            cursorHeight: 22.sp,
             readOnly: widget.isReadOnly ?? false,
             onTap: () {
               setState(() {
@@ -125,7 +128,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             obscuringCharacter: "*",
             enableSuggestions: true,
             controller: widget.textEditingController,
-            style: AppTextStyles.alexandria25WhitekW900,
+            style: AppTextStyles.alexandria20WhitekW100,
             cursorColor: AppColors.whiteBlack,
             keyboardType: widget.keyboardType,
             decoration: InputDecoration(
@@ -152,7 +155,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 padding: EdgeInsets.all(10.0.sp),
                 child: widget.prefixIcon,
               ),
-
               hintStyle: widget.hintTextStyle ??
                   AppTextStyles.alexandria15WhiteBlackW500,
               border: OutlineInputBorder(
@@ -210,13 +212,21 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         onTap: () {
           togglePasswordVisibility();
         },
-        child: isObsecured
-            ? Assets.images.icons.eyeDisabled.svg(height: 18.75.h, width: 16.w)
-            : Assets.images.icons.eyeEnabled.svg(height: 18.75.h, width: 16.w),
+        child: Padding(
+          padding:
+              EdgeInsets.only(right: 20.w), // Add 20 spacing from the border
+          child: Container(
+            width: 30.w, // Ensure the icon retains its size
+            height: 30.h,
+            alignment: Alignment.center, // Center the icon
+            child: isObsecured
+                ? Assets.images.icons.eyeDisabled.svg(height: 20.h, width: 20.w)
+                : Assets.images.icons.eyeEnabled.svg(height: 20.h, width: 20.w),
+          ),
+        ),
       );
-    } else {
-      return null;
     }
+    return null;
   }
 
   /// Returns an [OutlineInputBorder] with a circular border radius of 10
