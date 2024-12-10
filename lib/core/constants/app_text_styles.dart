@@ -80,7 +80,7 @@ class AppTextStyles {
     color: AppColors.grey,
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
-
+  );
   static TextStyle alexandria20WhitekW100 = TextStyle(
     fontFamily: FontFamily.alexandria,
     fontSize: 20.sp,
