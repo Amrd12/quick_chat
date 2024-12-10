@@ -74,10 +74,17 @@ class AppTextStyles {
     fontSize: 11.sp,
     fontWeight: FontWeight.w400,
   );
+
   static TextStyle alexandria14greykW500 = TextStyle(
     fontFamily: FontFamily.alexandria,
     color: AppColors.grey,
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
+
+  static TextStyle alexandria20WhitekW100 = TextStyle(
+    fontFamily: FontFamily.alexandria,
+    color: Colors.white,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w100,
   );
 }
