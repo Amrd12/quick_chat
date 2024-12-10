@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-import 'package:quick_chat/core/utils/app_colors.dart';
 
 class CustomImagePicker extends StatefulWidget {
   const CustomImagePicker({

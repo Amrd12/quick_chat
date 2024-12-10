@@ -8,7 +8,7 @@ class CustomAppBars extends AppBar {
   final String text;
   final List<Widget>? actions;
 
-  CustomAppBars({required this.text, required this.actions})
+  CustomAppBars({super.key, required this.text, required this.actions})
       : super(
           leading: SizedBox(
             height: 40.sp,
@@ -19,9 +19,9 @@ class CustomAppBars extends AppBar {
             ),
           ),
           iconTheme: IconThemeData(
-            color: AppColors.whiteBlack, //change your color here
+            // color: AppColors.whiteBlack, //change your color here
           ),
-          backgroundColor: AppColors.blackWhite,
+          // backgroundColor: AppColors.blackWhite,
           title: Text(
             text,
             style: AppTextStyles.alexandria25WhiteBlackW900,

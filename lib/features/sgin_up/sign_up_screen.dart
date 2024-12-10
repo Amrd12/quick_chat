@@ -56,14 +56,16 @@ class _SignUpBodyState extends State<SignUpBody> {
           CustomImagePicker(
             ontap: (XFile file) {},
             boxDecoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50.r),
-                color: AppColors.grey.withOpacity(.2)),
+              borderRadius: BorderRadius.circular(50.r),
+              // color: AppColors.grey.withOpacity(.2),
+              color: Theme.of(context).secondaryHeaderColor,
+            ),
             addIcon: CircleAvatar(
               radius: 16.r,
-              backgroundColor: AppColors.whiteBlack,
+              // backgroundColor: AppColors.whiteBlack,
               child: Icon(
                 Icons.add,
-                color: AppColors.blackWhite,
+                // color: AppColors.blackWhite,
                 size: 20.sp,
               ),
             ),
