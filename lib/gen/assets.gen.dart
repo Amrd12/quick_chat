@@ -43,6 +43,21 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Code.svg
+  SvgGenImage get code => const SvgGenImage('assets/images/Code.svg');
+
+  /// File path: assets/images/active_status.png
+  AssetGenImage get activeStatus =>
+      const AssetGenImage('assets/images/active_status.png');
+
+  /// File path: assets/images/dark_mode_off_icon.png
+  AssetGenImage get darkModeOffIcon =>
+      const AssetGenImage('assets/images/dark_mode_off_icon.png');
+
+  /// File path: assets/images/dark_mode_on_icon.png
+  AssetGenImage get darkModeOnIcon =>
+      const AssetGenImage('assets/images/dark_mode_on_icon.png');
+
   /// Directory path: assets/images/icons
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
@@ -52,25 +67,56 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.svg
   SvgGenImage get logoSvg => const SvgGenImage('assets/images/logo.svg');
 
+  /// File path: assets/images/me.jpg
+  AssetGenImage get me => const AssetGenImage('assets/images/me.jpg');
+
+  /// File path: assets/images/notification.png
+  AssetGenImage get notification =>
+      const AssetGenImage('assets/images/notification.png');
+
   /// File path: assets/images/onboarding.png
   AssetGenImage get onboarding =>
       const AssetGenImage('assets/images/onboarding.png');
+
+  /// File path: assets/images/people.png
+  AssetGenImage get people => const AssetGenImage('assets/images/people.png');
 
   /// File path: assets/images/pexels-rio-kuncoro-1373834-2773977.jpg
   AssetGenImage get pexelsRioKuncoro13738342773977 => const AssetGenImage(
       'assets/images/pexels-rio-kuncoro-1373834-2773977.jpg');
 
+  /// File path: assets/images/phone.png
+  AssetGenImage get phone => const AssetGenImage('assets/images/phone.png');
+
+  /// File path: assets/images/profile_frame.png
+  AssetGenImage get profileFrame =>
+      const AssetGenImage('assets/images/profile_frame.png');
+
   /// File path: assets/images/profile_image_placeholder.svg
   SvgGenImage get profileImagePlaceholder =>
       const SvgGenImage('assets/images/profile_image_placeholder.svg');
 
+  /// File path: assets/images/user_name.png
+  AssetGenImage get userName =>
+      const AssetGenImage('assets/images/user_name.png');
+
   /// List of all assets
   List<dynamic> get values => [
+        code,
+        activeStatus,
+        darkModeOffIcon,
+        darkModeOnIcon,
         logoPng,
         logoSvg,
+        me,
+        notification,
         onboarding,
+        people,
         pexelsRioKuncoro13738342773977,
-        profileImagePlaceholder
+        phone,
+        profileFrame,
+        profileImagePlaceholder,
+        userName
       ];
 }
 
