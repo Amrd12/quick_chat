@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:quick_chat/core/utils/app_colors.dart';
 import '../../gen/assets.gen.dart';
-import '../../gen/colors.gen.dart';
 import '../constants/app_text_styles.dart';
 import '../utils/app_utils.dart';
 
@@ -130,6 +129,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             controller: widget.textEditingController,
             style: AppTextStyles.alexandria20WhitekW100,
             cursorColor: AppColors.whiteBlack,
+
             keyboardType: widget.keyboardType,
             decoration: InputDecoration(
               errorStyle: const TextStyle(fontSize: 0),
@@ -239,10 +239,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   ///
   /// The returned [OutlineInputBorder] has a [BorderRadius.circular] of 10
   /// and a [BorderSide] with the given [color].
-  OutlineInputBorder _buildBorder({required Color color}) {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10.r),
-      borderSide: BorderSide(color: color),
-    );
-  }
+  // OutlineInputBorder _buildBorder({required Color color}) {
+  //   return OutlineInputBorder(
+  //     borderRadius: BorderRadius.circular(10.r),
+  //     borderSide: BorderSide(color: color),
+  //   );
+  // }
 }

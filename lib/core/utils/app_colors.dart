@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quick_chat/gen/fonts.gen.dart';
 
 class AppColors {
   // Singleton implementation (optional, if needed elsewhere)
@@ -10,15 +9,16 @@ class AppColors {
   // Static theme mode variable
   static bool isDarkMode = true;
 
-  // Static color definitions
+  // // Static color definitions
   static const Color blue = Color(0xFF002DE3);
   static const Color red = Color.fromARGB(255, 255, 0, 0);
-  // static const Color gery = Colors.grey;
+  // // static const Color gery = Colors.grey;
 
-  // Background color depending on dark mode
+  // // Background color depending on dark mode
   static Color get blackWhite => isDarkMode ? Colors.black : Colors.white;
 
   static Color get whiteBlack => isDarkMode ? Colors.white : Colors.black;
+  
   static Color get grey =>
       isDarkMode ? Colors.grey.shade500 : Colors.grey.shade700;
 

@@ -3,9 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
 import 'package:quick_chat/core/widgets/custom_button.dart';
 import 'package:quick_chat/features/login/screens/login_screen.dart';
-import 'package:quick_chat/features/sgin_up/sign_up_screen.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
-import "package:quick_chat/core/utils/app_colors.dart";
 import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatelessWidget {

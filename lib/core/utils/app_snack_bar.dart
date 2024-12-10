@@ -20,8 +20,10 @@ class AppSnackBar {
       onTap: onTap,
       Overlay.of(context),
       CustomSnackBar.error(
-        backgroundColor: AppColors.blackWhite.withOpacity(.5),
-        boxShadow: [BoxShadow(color: Colors.grey.shade200.withOpacity(0.5))],
+        backgroundColor: AppColors.scheme.primary.withOpacity(.5),
+        boxShadow: [
+          BoxShadow(color: Theme.of(context).cardColor.withOpacity(.5))
+        ],
         icon: const SizedBox(),
         textStyle: AppTextStyles.alexandria25WhiteBlackW900,
         message: msg,

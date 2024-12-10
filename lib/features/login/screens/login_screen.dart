@@ -37,6 +37,7 @@ class LoginScreen extends StatelessWidget {
                 style: AppTextStyles.alexandria25WhiteBlackW900,
               ),
               SizedBox(height: 50.sp),
+
               EmailTextFormField(),
               SizedBox(height: 10.sp),
               CustomTextFormField(
@@ -44,6 +45,7 @@ class LoginScreen extends StatelessWidget {
                       BoxConstraints(minWidth: 50, minHeight: 50),
                   hintText: 'Enter your password',
                   obscureText: T,
+
                   prefixIcon: Assets.images.icons.lockIcon
                       .image(color: AppColors.whiteBlack),
                   label: 'Password'),
@@ -65,6 +67,7 @@ class LoginScreen extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   
+
                   context.push(SignUpScreen.id);
                 },
                 child: Text.rich(TextSpan(children: [

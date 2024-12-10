@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_chat/core/utils/app_colors.dart';
 import 'package:quick_chat/core/widgets/custom_appbar.dart';
+import 'package:quick_chat/core/widgets/custom_textfield.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.sp, vertical: 15.sp),
+      padding: EdgeInsets.symmetric(horizontal: 10.sp, vertical: 15.sp),
       child: Scaffold(
         appBar: CustomAppBars(
           text: "Chats",
@@ -28,7 +29,18 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        body: Container(),
+        body: Padding(
+          padding: EdgeInsets.only(top: 15.0),
+          child: Column(
+            children: [
+              // SizedBox(height: 20.h),
+              CustomTextFormField(
+                  hintText: "Search",
+                  prefixIcon: Icon(Icons.search),
+                  label: "Search")
+            ],
+          ),
+        ),
       ),
     );
   }
