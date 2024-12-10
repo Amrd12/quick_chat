@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 //Screens
 import 'package:quick_chat/features/login/screens/login_screen.dart';
 import 'package:quick_chat/features/onboarding/onboarding_screen.dart';
+import 'package:quick_chat/features/profile/screens/profile_screen.dart';
 import 'package:quick_chat/features/sgin_up/sign_up_screen.dart';
 import 'package:quick_chat/features/home/home_screen.dart';
 
@@ -18,7 +19,7 @@ abstract class AppRouter {
   }
 
   static GoRouter goRouter = GoRouter(
-    initialLocation: OnboardingScreen.id,
+    initialLocation: ProfileScreen.id,
     routes: [
       GoRoute(
         path: OnboardingScreen.id,
@@ -33,12 +34,17 @@ abstract class AppRouter {
       GoRoute(
         path: LoginScreen.id,
         name: LoginScreen.id,
-        builder: (context, state) =>  LoginScreen(),
+        builder: (context, state) => LoginScreen(),
       ),
       GoRoute(
         path: HomeScreen.id,
         name: HomeScreen.id,
         builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        path: ProfileScreen.id,
+        name: ProfileScreen.id,
+        builder: (context, state) => const ProfileScreen(),
       ),
     ],
   );
