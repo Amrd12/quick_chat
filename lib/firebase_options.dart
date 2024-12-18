@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -49,21 +50,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC4RRuXn5SfaQ4fwaz3uWQjb-YsxKV7bGY',
-    appId: '1:383659625698:android:fa5236f36be25abcb1e2bb',
-    messagingSenderId: '383659625698',
-    projectId: 'quick-chat-1c68d',
-    storageBucket: 'quick-chat-1c68d.firebasestorage.app',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['ANDROID_API_KEY']!,
+    appId: dotenv.env['ANDROID_APP_ID']!,
+    messagingSenderId: dotenv.env['ANDROID_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['ANDROID_PROJECT_ID']!,
+    storageBucket: dotenv.env['ANDROID_STORAGE_BUCKET']!,
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyARfjer_eALnQOxBdnte1-lYEodr7afzyk',
-    appId: '1:383659625698:ios:bb4267e6c22fc179b1e2bb',
-    messagingSenderId: '383659625698',
-    projectId: 'quick-chat-1c68d',
-    storageBucket: 'quick-chat-1c68d.firebasestorage.app',
-    iosBundleId: 'com.example.quickChat',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['IOS_API_KEY']!,
+    appId: dotenv.env['IOS_APP_ID']!,
+    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['IOS_PROJECT_ID']!,
+    storageBucket: dotenv.env['IOS_STORAGE_BUCKET']!,
+    iosBundleId: dotenv.env['IOS_BUNDLE_ID']!,
   );
-
 }
