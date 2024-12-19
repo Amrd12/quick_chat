@@ -17,6 +17,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
       child: ListView(
+        scrollDirection: Axis.vertical,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(vertical: 20.sp),
@@ -28,7 +29,10 @@ class ProfileScreen extends StatelessWidget {
                   const Center(
                     child: Stack(
                       alignment: Alignment.center,
-                      children: [ProfilePicture(), ProfileFrame()],
+                      children: [
+                        ProfilePicture(),
+                        ProfileFrame(),
+                      ],
                     ),
                   ),
                   Padding(
