@@ -48,6 +48,7 @@ class _SignUpBodyState extends State<SignUpBody> {
     return Padding(
       padding: EdgeInsets.all(15.sp),
       child: Column(
+        
         crossAxisAlignment: CrossAxisAlignment.center,
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [

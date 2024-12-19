@@ -19,7 +19,9 @@ abstract class AppRouter {
   }
 
   static GoRouter goRouter = GoRouter(
-    initialLocation: LoginScreen.id,
+
+    initialLocation: intialRoute,
+
     routes: [
       GoRoute(
         path: OnboardingScreen.id,
