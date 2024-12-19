@@ -53,7 +53,7 @@ class _SignUpBodyState extends State<SignUpBody> {
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // SizedBox(height: 50.h),
-          Spacer(),
+          const Spacer(),
           CustomImagePicker(
             ontap: (XFile file) {},
             boxDecoration: BoxDecoration(
@@ -127,7 +127,7 @@ class _SignUpBodyState extends State<SignUpBody> {
               )
             ])),
           ),
-          SizedBox(height: 10)
+          const SizedBox(height: 10)
         ],
       ),
     );

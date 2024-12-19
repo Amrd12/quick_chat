@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quick_chat/core/utils/app_colors.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 
