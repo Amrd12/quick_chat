@@ -21,7 +21,7 @@ class UserNameListTile extends StatelessWidget {
             Text(
               'user.name',
             ),
-            const Icon(
+            Icon(
               Icons.arrow_forward_ios_rounded,
             ),
           ],

@@ -1,7 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
-import 'package:quick_chat/core/utils/app_colors.dart';
 import 'package:quick_chat/core/widgets/custom_appbar.dart';
 import 'package:quick_chat/core/widgets/custom_button.dart';
 import 'package:quick_chat/core/widgets/custom_textfield.dart';
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           actions: <Widget>[
             IconButton(
                 icon: Assets.images.icons.cameraIcon.svg(),
-                onPressed: () => null,
+                onPressed: () => log('Camera Icon Pressed'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
                       Theme.of(context).colorScheme.onSurface.withOpacity(.3),

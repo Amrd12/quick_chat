@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,11 +14,12 @@ class EmailTextFormField extends StatefulWidget {
 }
 
 class _EmailTextFormFieldState extends State<EmailTextFormField> {
-  TextEditingController EmailTextEditingController = TextEditingController();
+  final TextEditingController _emailTextEditingController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        textEditingController: EmailTextEditingController,
+        textEditingController: _emailTextEditingController,
         validator: (p0) => Validators.emailValidator(p0!),
         keyboardType: TextInputType.emailAddress,
         inputTextStyle: TextStyle(fontSize: 10.sp, color: Colors.white),
