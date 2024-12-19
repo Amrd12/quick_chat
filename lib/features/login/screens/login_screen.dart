@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
 import 'package:quick_chat/core/utils/app_colors.dart';
 import 'package:quick_chat/core/utils/app_snack_bar.dart';
-import 'package:quick_chat/core/utils/validator_utils.dart';
 import 'package:quick_chat/core/widgets/custom_button.dart';
 import 'package:quick_chat/core/widgets/custom_textfield.dart';
 import 'package:quick_chat/features/home/home_screen.dart';
@@ -16,6 +15,7 @@ import 'package:quick_chat/gen/assets.gen.dart';
 class LoginScreen extends StatelessWidget {
   static const String id = '/loginScreen';
   const LoginScreen({super.key});
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -37,23 +37,39 @@ class LoginScreen extends StatelessWidget {
                 style: AppTextStyles.alexandria25WhiteBlackW900,
               ),
               SizedBox(height: 50.sp),
-              EmailTextFormField(),
-              SizedBox(height: 10.sp),
-              CustomTextFormField(
-                  suffixIconConstraints:
-                      BoxConstraints(minWidth: 50, minHeight: 50),
-                  hintText: 'Enter your password',
-                  obscureText: T,
-                  prefixIcon: Assets.images.icons.lockIcon
-                      .image(color: AppColors.whiteBlack),
-                  label: 'Password'),
-              SizedBox(height: 20.sp),
+
+              Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      const EmailTextFormField(),
+
+                      SizedBox(height: 10.sp),
+
+                      // Password Text Form Field
+                      CustomTextFormField(
+                          suffixIconConstraints:
+                              const BoxConstraints(minWidth: 50, minHeight: 50),
+                          hintText: 'Enter your password',
+                          obscureText: T,
+                          prefixIcon: Assets.images.icons.lockIcon
+                              .image(color: AppColors.whiteBlack),
+                          label: 'Password'),
+                      SizedBox(height: 20.sp),
+                    ],
+                  )),
+              // Email Text Form Field
+
+              //Login Button
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.sp),
                 child: CustomButton(
                   onTap: () {
-                    AppSnackBar.showSnackBar(context, "Logged");
-                    context.pushNamed(HomeScreen.id);
+                    if (_formKey.currentState?.validate() ?? false) {
+                      AppSnackBar.showSnackBar(
+                          context, "Logged In Successfully");
+                      context.pushNamed(HomeScreen.id);
+                    }
                   },
                   filled: true,
                   boarderRadius: 25.sp,

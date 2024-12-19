@@ -5,7 +5,6 @@ import 'package:quick_chat/features/profile/widgets/custom_list_tile.dart';
 import 'package:quick_chat/features/profile/widgets/dark_mode_list_tile.dart';
 import 'package:quick_chat/features/profile/widgets/profile_frame.dart';
 import 'package:quick_chat/features/profile/widgets/profile_picture.dart';
-import 'package:quick_chat/features/profile/widgets/user_name_list_tile.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -17,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
       child: ListView(
+        scrollDirection: Axis.vertical,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(vertical: 20.sp),
@@ -28,7 +28,10 @@ class ProfileScreen extends StatelessWidget {
                   const Center(
                     child: Stack(
                       alignment: Alignment.center,
-                      children: [ProfilePicture(), ProfileFrame()],
+                      children: [
+                        ProfilePicture(),
+                        ProfileFrame(),
+                      ],
                     ),
                   ),
                   Padding(

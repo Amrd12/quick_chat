@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_chat/core/utils/app_colors.dart';
-import 'package:quick_chat/features/profile/screens/profile_screen.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 
 class DarkmodeListTile extends StatefulWidget {
