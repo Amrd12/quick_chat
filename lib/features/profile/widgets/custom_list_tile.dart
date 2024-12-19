@@ -21,7 +21,7 @@ class CustomListTile extends StatelessWidget {
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          label != null ? Text(label!) : Text(''),
+          label != null ? Text(label!) : const Text(''),
           const Icon(
             Icons.arrow_forward_ios_rounded,
           ),
