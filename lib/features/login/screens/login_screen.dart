@@ -14,8 +14,8 @@ import 'package:quick_chat/gen/assets.gen.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String id = '/loginScreen';
+  const LoginScreen({super.key});
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +37,7 @@ class LoginScreen extends StatelessWidget {
                 style: AppTextStyles.alexandria25WhiteBlackW900,
               ),
               SizedBox(height: 50.sp),
+
               Form(
                   key: _formKey,
                   child: Column(

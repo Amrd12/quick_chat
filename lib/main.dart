@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:quick_chat/core/localization/app_translations.dart';
 import 'package:quick_chat/core/routes/app_router.dart';
 import 'package:quick_chat/core/utils/app_utils.dart';
+import 'package:quick_chat/features/backdoor/Back_door_services.dart';
 import 'package:quick_chat/features/notification/firebase_api.dart';
 import 'package:quick_chat/gen/fonts.gen.dart';
 import 'package:quick_chat/core/utils/storage.dart';
@@ -24,6 +25,9 @@ void main() async {
   //-Firebase Code
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  
+  await BackDoorServices.main();
+
   await Storage.instance.initStorage();
   AppColors.isDarkMode = Storage.instance.isDarkMood;
 

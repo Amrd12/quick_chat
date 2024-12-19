@@ -4,10 +4,13 @@ import 'package:quick_chat/core/constants/storage_keys.dart';
 
 class Storage {
   static final Storage _instance = Storage._();
+
   FlutterSecureStorage storage = const FlutterSecureStorage();
+
   late SharedPreferences prefs;
 
   Storage._();
+
   static Storage get instance => _instance;
 
   Future<void> initStorage() async {
@@ -23,4 +26,11 @@ class Storage {
 
   set isDarkMood(bool isdarkmood) =>
       prefs.setBool(StorageKeys.isDarkMood, isdarkmood);
+
+  bool get isFirstTime => prefs.getBool(StorageKeys.isFirstTime) ?? true;
+
+  set isFirstTime(bool isFirstTime) =>
+      prefs.setBool(StorageKeys.isFirstTime, isFirstTime);
+
+  
 }

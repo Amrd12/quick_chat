@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
-
+import 'package:quick_chat/core/utils/storage.dart';
+import 'package:quick_chat/features/backdoor/Back_door_services.dart';
 //Screens
 import 'package:quick_chat/features/login/screens/login_screen.dart';
 import 'package:quick_chat/features/onboarding/onboarding_screen.dart';
@@ -9,16 +10,19 @@ import 'package:quick_chat/features/home/home_screen.dart';
 
 abstract class AppRouter {
   static String get intialRoute {
-    return "";
+    if (!BackDoorServices.status) {
+      return HomeScreen.id;
+    }
 
-    // if (SharedPref().intialRoute()) {
-    //   return BottomNavBar.id;
-    // } else {
-    //   return LanguageScreen.id;
-    // }
+    if (Storage.instance.isFirstTime) {
+      return OnboardingScreen.id;
+    }
+    
+    return LoginScreen.id;
   }
 
   static GoRouter goRouter = GoRouter(
+
 
     initialLocation: intialRoute,
 
@@ -36,7 +40,7 @@ abstract class AppRouter {
       GoRoute(
         path: LoginScreen.id,
         name: LoginScreen.id,
-        builder: (context, state) => LoginScreen(),
+        builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
         path: HomeScreen.id,
