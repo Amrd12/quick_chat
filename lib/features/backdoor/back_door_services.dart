@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -14,7 +13,7 @@ class BackDoorServices {
       ApiCallHandler.handleApiCall(
           apiCall: () =>
               DioConfig.getDio().getUri(Uri.parse(dotenv.env["app_status"]!)),
-          parser: ({required data}) => jsonDecode(data)["status"]);
+          parser: ({required data}) => data["status"]);
 
   static Future<void> main() async {
     final ApiResult data = await getStatus();
