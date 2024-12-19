@@ -15,10 +15,10 @@ import 'package:quick_chat/gen/assets.gen.dart';
 class LoginScreen extends StatelessWidget {
   static const String id = '/loginScreen';
   const LoginScreen({super.key});
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
@@ -39,7 +39,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 50.sp),
 
               Form(
-                  key: _formKey,
+                  key: formKey,
                   child: Column(
                     children: [
                       const EmailTextFormField(),
@@ -65,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 25.sp),
                 child: CustomButton(
                   onTap: () {
-                    if (_formKey.currentState?.validate() ?? false) {
+                    if (formKey.currentState?.validate() ?? false) {
                       AppSnackBar.showSnackBar(
                           context, "Logged In Successfully");
                       context.pushNamed(HomeScreen.id);
