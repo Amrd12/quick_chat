@@ -35,7 +35,7 @@ class CustomChatWidget extends StatelessWidget {
         )),
         SizedBox(width: 15.w),
         CustomButton(
-            onTap: () => null,
+            onTap: () {},
             color: Colors.transparent,
             child: const Icon(Icons.circle_outlined))
       ],

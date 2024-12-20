@@ -18,7 +18,7 @@ class StatusListViewWidget extends StatelessWidget {
           itemCount: 11,
           itemBuilder: (context, index) => index == 0
               ? CustomButton(
-                  onTap: () => null,
+                  onTap: () {},
                   isCircle: true,
                   width: 80.w,
                   // boarderRadius: 40.r,
@@ -31,7 +31,7 @@ class StatusListViewWidget extends StatelessWidget {
                   ),
                 )
               : CustomButton(
-                  onTap: () => null,
+                  onTap: () {},
                   isCircle: true,
                   width: 80.w,
                   // boarderRadius: 40.r,

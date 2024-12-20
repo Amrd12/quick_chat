@@ -1,6 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
-import 'package:get/utils.dart';
 import 'package:quick_chat/core/constants/api_endpoints.dart';
 
 /// A configuration helper class for setting up a Dio client with caching, logging, and timeout functionality.
@@ -45,16 +43,16 @@ class DioConfig {
   /// final response = await dio.get('/endpoint');
   /// ```
   static Dio getDio() {
-    final cacheOptions = CacheOptions(
-      store: MemCacheStore(),
-      policy: CachePolicy.request,
-      hitCacheOnErrorExcept: [401, 403, 422],
-      maxStale: const Duration(days: 7),
-      priority: CachePriority.normal,
-      cipher: null,
-      keyBuilder: CacheOptions.defaultCacheKeyBuilder,
-      allowPostMethod: false,
-    );
+    // final cacheOptions = CacheOptions(
+    //   store: MemCacheStore(),
+    //   policy: CachePolicy.request,
+    //   hitCacheOnErrorExcept: [401, 403, 422],
+    //   maxStale: const Duration(days: 7),
+    //   priority: CachePriority.normal,
+    //   cipher: null,
+    //   keyBuilder: CacheOptions.defaultCacheKeyBuilder,
+    //   allowPostMethod: false,
+    // );
 
     BaseOptions options = BaseOptions(
       baseUrl: ApiEndpoints.baseurl,
@@ -85,7 +83,7 @@ class DioConfig {
             responseHeader: true,
             request: true,
           ),
-          DioCacheInterceptor(options: cacheOptions),
+          // DioCacheInterceptor(options: cacheOptions),
         ],
       );
     return dio;

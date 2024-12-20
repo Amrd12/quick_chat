@@ -70,8 +70,8 @@ class ApiCallHandler {
         );
       }
     } on DioException catch (e) {
-      print("**********************************************");
-      print(e.response);
+      log("**********************************************");
+      log(e.response.toString());
       // Handle DioException errors, such as network or server errors.
       ApiErrorHandler handler = ApiErrorHandler(
         statusCode: e.response?.statusCode ?? 500,

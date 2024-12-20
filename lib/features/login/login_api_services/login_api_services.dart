@@ -1,5 +1,6 @@
 abstract class LoginApiServices {
-  void login();
-  void regester();
-  void logout();
+  Future<void> login();
+  Future<void> regester();
+  Future<void> logout();
+  Future<bool> isSessionValid();
 }
