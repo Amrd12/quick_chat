@@ -8,8 +8,8 @@ import 'package:quick_chat/core/utils/app_snack_bar.dart';
 import 'package:quick_chat/core/widgets/custom_button.dart';
 import 'package:quick_chat/core/widgets/custom_textfield.dart';
 import 'package:quick_chat/features/home/home_screen.dart';
-import 'package:quick_chat/features/login/widgets/email_text_form_field.dart';
-import 'package:quick_chat/features/sgin_up/sign_up_screen.dart';
+import 'package:quick_chat/features/Auth/login/widgets/email_text_form_field.dart';
+import 'package:quick_chat/features/Auth/sgin_up/sign_up_screen.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 
 class LoginScreen extends StatelessWidget {

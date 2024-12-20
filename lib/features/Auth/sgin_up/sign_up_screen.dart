@@ -10,7 +10,7 @@ import 'package:quick_chat/core/widgets/custom_button.dart';
 import 'package:quick_chat/core/widgets/custom_image_picker.dart';
 import 'package:quick_chat/core/widgets/custom_textfield.dart';
 import 'package:quick_chat/features/home/home_screen.dart';
-import 'package:quick_chat/features/login/screens/login_screen.dart';
+import 'package:quick_chat/features/Auth/login/screens/login_screen.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 import 'package:quick_chat/core/utils/validator_utils.dart';
 

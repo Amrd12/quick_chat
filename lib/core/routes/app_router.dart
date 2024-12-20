@@ -2,10 +2,10 @@ import 'package:go_router/go_router.dart';
 import 'package:quick_chat/core/utils/storage.dart';
 import 'package:quick_chat/features/backdoor/Back_door_services.dart';
 //Screens
-import 'package:quick_chat/features/login/screens/login_screen.dart';
+import 'package:quick_chat/features/Auth/login/screens/login_screen.dart';
 import 'package:quick_chat/features/onboarding/onboarding_screen.dart';
 import 'package:quick_chat/features/profile/screens/profile_screen.dart';
-import 'package:quick_chat/features/sgin_up/sign_up_screen.dart';
+import 'package:quick_chat/features/Auth/sgin_up/sign_up_screen.dart';
 import 'package:quick_chat/features/home/home_screen.dart';
 
 abstract class AppRouter {
