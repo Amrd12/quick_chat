@@ -1,21 +1,43 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:quick_chat/core/localization/app_translations.dart';
 import 'package:quick_chat/core/routes/app_router.dart';
 import 'package:quick_chat/core/utils/app_utils.dart';
-import 'package:quick_chat/gen/colors.gen.dart';
+import 'package:quick_chat/features/backdoor/Back_door_services.dart';
+import 'package:quick_chat/features/notification/firebase_api.dart';
 import 'package:quick_chat/gen/fonts.gen.dart';
+import 'package:quick_chat/core/utils/storage.dart';
+import 'package:quick_chat/core/utils/app_colors.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:quick_chat/firebase_options.dart';
 
-void main() {
-    WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-    FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    runApp(const MyApp());
-    FlutterNativeSplash.remove();
+void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  EasyLocalization.ensureInitialized();
+  await dotenv.load();
+  //FireBase Code
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseApi().initNotification();
+  //-Firebase Code
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
+  await BackDoorServices.main();
+
+  await Storage.instance.initStorage();
+  Storage.instance.isFirstTime = true;
+  AppColors.isDarkMode = Storage.instance.isDarkMood;
+
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en'), Locale('ar')],
+        path: 'i18n',
+        child: const MyApp()),
+  );
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
@@ -29,31 +51,36 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         AppScreenUtils.initUtils(context);
-        return  GetMaterialApp.router(
-            routeInformationParser: AppRouter.goRouter.routeInformationParser,
-            routerDelegate: AppRouter.goRouter.routerDelegate,
-            routeInformationProvider:
-                AppRouter.goRouter.routeInformationProvider,
-            translations: AppTranslations(),
-            locale: Get.locale ?? const Locale("ar"),
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              appBarTheme: const AppBarTheme(
-                color: Colors.white,
+        return MaterialApp.router(
+          routeInformationParser: AppRouter.goRouter.routeInformationParser,
+          routerDelegate: AppRouter.goRouter.routerDelegate,
+          routeInformationProvider: AppRouter.goRouter.routeInformationProvider,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            appBarTheme: AppBarTheme(
+              iconTheme: IconThemeData(
+                color: AppColors.whiteBlack, //change your color here
               ),
-              //edited by : waleed
-              //edited at : 21/10/2024
-              //edits : make the color of selection color to be green and change the color of handle
-              textSelectionTheme: TextSelectionThemeData(
-                selectionColor: ColorName.green.withOpacity(0.5),
-                selectionHandleColor: ColorName.green,
-              ),
-              fontFamily: FontFamily.alexandria,
-              useMaterial3: true,
-              brightness: Brightness.light,
-              scaffoldBackgroundColor: Colors.white,
+              color: AppColors.blackWhite,
             ),
-          
+            colorScheme: AppColors.scheme,
+            primaryColor: AppColors.blue,
+            textSelectionTheme: TextSelectionThemeData(
+              selectionColor: AppColors.blue.withOpacity(0.5),
+              selectionHandleColor: AppColors.blue,
+            ),
+            fontFamily: FontFamily.alexandria,
+            useMaterial3: true,
+            scaffoldBackgroundColor: AppColors.blackWhite,
+          ),
+
+          // theme: AppColors.lightTheme,
+          // darkTheme: AppColors.dartTheme,
+          // themeMode:
+          //     Storage.instance.isDarkMood ? ThemeMode.dark : ThemeMode.light,
         );
       },
     );

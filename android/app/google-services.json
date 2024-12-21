@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "315121293172",
+    "firebase_url": "https://nokhba-ac-default-rtdb.firebaseio.com",
+    "project_id": "nokhba-ac",
+    "storage_bucket": "nokhba-ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315121293172:android:020b3c3e429d1b04943e21",
+        "android_client_info": {
+          "package_name": "com.example.quickchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGxqv2R0JKa6s2nr3Fvyx7DFtWg-O42Uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315121293172:android:89ac6ff9bfad3a29943e21",
+        "android_client_info": {
+          "package_name": "com.nokhba.acadmy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGxqv2R0JKa6s2nr3Fvyx7DFtWg-O42Uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

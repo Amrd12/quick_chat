@@ -13,6 +13,9 @@ class FontFamily {
   /// Font family: AlexBrush
   static const String alexBrush = 'AlexBrush';
 
+  /// Font family: Mulish
+  static const String mulish = 'Mulish';
+
   /// Font family: Poppins
   static const String poppins = 'Poppins';
 
