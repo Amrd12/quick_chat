@@ -17,11 +17,11 @@ class BackDoorServices {
 
   static Future<void> main() async {
     final ApiResult data = await getStatus();
-    data.when(
-        success: (data) {
-          log("App Status is ${data.runtimeType} $data");
-          status = data;
-        },
-        failure: (ApiErrorHandler error) {});
+    data.when(success: (data) {
+      log("App Status is ${data.runtimeType} $data");
+      status = data;
+    }, failure: (ApiErrorHandler error) {
+      log("error is ${error.statusMessage}");
+    });
   }
 }

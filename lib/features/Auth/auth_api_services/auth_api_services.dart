@@ -10,9 +10,15 @@ abstract class AuthApiServices {
     required String pass,
     required String name,
     required String phoneNumber,
-    required String deviceId,
+    required String fcmToken,
   });
-
+  Future<ApiResult<UserModel>> update({
+    String? mail,
+    String? pass,
+    String? name,
+    String? phoneNumber,
+    String? fcmToken,
+  });
   Future<void> logout();
 
   Future<bool> isSessionValid();

@@ -12,6 +12,19 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
+class $I18nGen {
+  const $I18nGen();
+
+  /// File path: i18n/ar.json
+  String get ar => 'i18n/ar.json';
+
+  /// File path: i18n/en.json
+  String get en => 'i18n/en.json';
+
+  /// List of all assets
+  List<String> get values => [ar, en];
+}
+
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
@@ -167,6 +180,10 @@ class $AssetsImagesIconsGen {
   AssetGenImage get personIcon =>
       const AssetGenImage('assets/images/icons/person_icon.png');
 
+  /// File path: assets/images/icons/phone_icon.svg
+  SvgGenImage get phoneIcon =>
+      const SvgGenImage('assets/images/icons/phone_icon.svg');
+
   /// List of all assets
   List<dynamic> get values => [
         cameraIcon,
@@ -179,7 +196,8 @@ class $AssetsImagesIconsGen {
         messageNotSeen,
         messageSeen,
         passwordIcon,
-        personIcon
+        personIcon,
+        phoneIcon
       ];
 }
 
@@ -189,6 +207,7 @@ class Assets {
   static const String aEnv = '.env';
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $I18nGen i18n = $I18nGen();
 
   /// List of all assets
   static List<String> get values => [aEnv];

@@ -1,6 +1,6 @@
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
 import 'package:quick_chat/core/utils/app_snack_bar.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';

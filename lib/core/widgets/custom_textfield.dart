@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:quick_chat/core/utils/app_colors.dart';
 import '../../gen/assets.gen.dart';
 import '../constants/app_text_styles.dart';
@@ -111,7 +110,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               } else if (value?.isEmpty ?? true) {
                 setState(() {
                   _hasValidationError = true;
-                  _errorMessage = "field_can't_be_empty".tr;
+                  _errorMessage = "field_can't_be_empty";
                 });
                 return "";
               }

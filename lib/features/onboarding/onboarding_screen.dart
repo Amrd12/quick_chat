@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_chat/core/constants/app_text_styles.dart';
+import 'package:quick_chat/core/utils/storage.dart';
 import 'package:quick_chat/core/widgets/custom_button.dart';
-import 'package:quick_chat/features/Auth/login/screens/login_screen.dart';
+import 'package:quick_chat/features/Auth/presentation/screens/login_screen.dart';
 import 'package:quick_chat/gen/assets.gen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -39,6 +40,7 @@ class OnboardingScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 25.sp),
               child: CustomButton(
                 onTap: () {
+                  Storage.instance.isFirstTime = false;
                   context.pushReplacementNamed(LoginScreen.id);
                 },
                 filled: true,

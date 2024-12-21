@@ -1,10 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:quick_chat/core/localization/app_translations.dart';
 import 'package:quick_chat/core/routes/app_router.dart';
 import 'package:quick_chat/core/utils/app_utils.dart';
 import 'package:quick_chat/features/backdoor/Back_door_services.dart';
@@ -17,21 +16,27 @@ import 'package:quick_chat/firebase_options.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  //FireBase Code
+  EasyLocalization.ensureInitialized();
   await dotenv.load();
+  //FireBase Code
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  WidgetsFlutterBinding.ensureInitialized(); // Ensure FlutterBinding.
   await FirebaseApi().initNotification();
   //-Firebase Code
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  
+
   await BackDoorServices.main();
 
   await Storage.instance.initStorage();
+  Storage.instance.isFirstTime = true;
   AppColors.isDarkMode = Storage.instance.isDarkMood;
 
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en'), Locale('ar')],
+        path: 'i18n',
+        child: const MyApp()),
+  );
   FlutterNativeSplash.remove();
 }
 
@@ -46,14 +51,14 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         AppScreenUtils.initUtils(context);
-        return GetMaterialApp.router(
+        return MaterialApp.router(
           routeInformationParser: AppRouter.goRouter.routeInformationParser,
           routerDelegate: AppRouter.goRouter.routerDelegate,
           routeInformationProvider: AppRouter.goRouter.routeInformationProvider,
-          translations: AppTranslations(),
-          locale: Get.locale ?? const Locale("en"),
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
           debugShowCheckedModeBanner: false,
-
           theme: ThemeData(
             appBarTheme: AppBarTheme(
               iconTheme: IconThemeData(
